@@ -1,17 +1,16 @@
-import io
 import os
 import sys
 import datetime
 import pyperclip
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import Qt, QProcess
-from PyQt5 import uic
+from PyQt5.QtCore import QProcess
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QFileDialog, QTextEdit, QMessageBox
-from PyQt5.QtWidgets import QMainWindow, QAction, QMenu, QLabel, QInputDialog
-from active_lang import *
+from PyQt5.QtWidgets import QMainWindow, QAction, QMenu
 from pynput.keyboard import Key, Controller
+
+from active_lang import *
 from newfile import NewFile
 
 keyb = Controller()

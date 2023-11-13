@@ -3,8 +3,9 @@ import sys
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QMainWindow
-from active_lang import *
 from PyQt5 import QtCore, QtWidgets
+
+from active_lang import *
 from text_manager import FileManager
 from image_edit import ImageCompress
 
