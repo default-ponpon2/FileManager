@@ -1,0 +1,96 @@
+Documentation for FileManager (functions and variables)
+
+types of variables:
+    static - non-editable during all process
+    dynamic - can be edited while program is running
+
+main.py
+
+d  - list of files (static)
+
+start - start file selected in the combobox
+
+that all for this file :)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+text_manager.py
+
+variables
+
+keyb - keyboard controller from pynput, for hotkeys (static)
+
+class FileManager - class of my text manager with all functions
+
+encode = encoding of file (dynamic)
+
+newfile_created - flag for open file function (dynamic)
+
+name  -  name of new created file (dynamic)
+
+docs = name of file documentation (static)
+
+docc = flag for open documentation (dynamic)
+
+file_menu, edit_menu, help_menu - menus on top of the manager
+
+
+functions
+
+open - opening file
+
+save - saving file (working like save as in other file-managers)
+
+saveas - saving file (save your active file)
+
+new - creating new file 
+
+handle_stderr, handle_stdout - idk
+
+run - run active file
+
+runas - run chosen file
+
+stop_code, finished_code - functions for console
+
+undo - Ctrl+Z hotkey
+
+redo - Ctrl+Shift+Z hotkey
+
+
+close_act - closing active file
+
+close_all - closing all files
+
+del_all - clear file (in manager, dont saving file)
+
+whatstime - print time and copy to clipboard
+
+change_encoding - Message "You want to switch encoding on all files?"
+
+
+
+set_utf, set_cp1252, set_ascii - set encoding
+
+about - open readme.md
+
+doc - open this file
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+image_edit.py
+
+class Imagecompress - main class with functions
+
+no variables yet
+
+functions
+
+open - open image ( if image resolution larger than window, func scaling picture)
+
+compress - compressing image resolution and saving to project directory
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

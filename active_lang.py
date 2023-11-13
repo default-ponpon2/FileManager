@@ -1,0 +1,35 @@
+TITLE = 'Файловый менеджер'
+MENU_TITLE = 'Меню'
+
+FILE_MENU = '&Файл'
+NEW_FILE = '&Новый файл...'
+OPEN_FILE = '&Открыть файл...'
+SAVE_FILE = '&Сохранить файл...'
+SAVE_FILE_AS = '&Сохранить как...'
+RUNFILE = 'Запустить активный файл'
+RUNAS = 'Запустить файл...'
+CLOSECON = 'Закрыть консоль'
+
+EDIT_MENU = 'Правка'
+UNDO = 'Отменить'
+REDO = 'Отменить отмену'
+DEL_ALL = 'Удалить все'
+FIND = 'Найти'
+REPLACE = 'Заменить'
+TIME = 'Время'
+ENCODING = 'Кодировка'
+UTF8 = 'UTF-8'
+CP = 'CP1252'
+ASCII = 'ASCII'
+CP437 = 'CP437'
+
+HELP_MENU = 'Помощь'
+ABOUT = 'Справка'
+DOC = 'Документация к коду'
+
+CLOSE_ACT = 'Закрыть активный файл'
+CLOSE_ALL = 'Закрыть все'
+
+# WORDS FOR 3D VIEWER
+OPEN_STL = 'Открыть STL...'
+SAVE_STL = 'Сохранить STL...'
