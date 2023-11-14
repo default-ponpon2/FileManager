@@ -36,8 +36,9 @@ jobs:
       continue-on-error: true
     - name: Save exe file
       uses: LarchLiu/actions-save-files@v1
-      with:
+      env:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        deploy_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
         publish_branch: publish
         publish_dir: ./public
       continue-on-error: true
