@@ -48,4 +48,5 @@ jobs:
         name: File Manager.exe
         path: ./public/FileManager.exe
       continue-on-error: true
+      # im genius sigma
       if: ${{ always() }}
