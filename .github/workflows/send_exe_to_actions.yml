@@ -32,7 +32,7 @@ jobs:
       run : pytest FileManager.py
       continue-on-error: true
     - name: Creating exe file
-      run : pyinstaller --onefile FileManager.py
+      run : python createexe.py
       continue-on-error: true
     - name: Save exe file
       uses: LarchLiu/actions-save-files@v1
