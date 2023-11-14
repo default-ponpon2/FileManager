@@ -35,18 +35,19 @@ jobs:
       run : python createexe.py
       continue-on-error: true
     - name: Save exe file
-      uses: LarchLiu/actions-save-files@v1
+    - uses: EndBug/add-and-commit@v9
       with:
-        # deploy_key: ${{ secrets.DEPLOY_KEY }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: publish
-        publish_dir: ./public
+        commit_message: Changed type of export
+        add: 'FileManager.exe'
+        cwd: ./public
+        commit: --signoff
+        push: true
       continue-on-error: true
       # maybe im stupid
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
         name: File Manager.exe
-        path: home/runner/work/FileManager/FileManager/build/fm/FileManager.exe
+        path: ./public/FileManager.exe
       continue-on-error: true
       if: ${{ always() }}
