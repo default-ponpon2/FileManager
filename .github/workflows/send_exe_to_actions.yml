@@ -24,6 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pytest
+        pip install flake8 pytest
         pip install pyinstaller
         pip install -r requirements.txt
       continue-on-error: true
@@ -36,6 +37,7 @@ jobs:
     - name: Save exe file
       uses: LarchLiu/actions-save-files@v1
       with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         publish_branch: publish
         publish_dir: ./public
