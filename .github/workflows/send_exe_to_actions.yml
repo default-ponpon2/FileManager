@@ -34,16 +34,17 @@ jobs:
     - name: Creating exe file
       run : pyinstaller --onefile FileManager.py
       continue-on-error: true
-    - name: Upload exe file
-      uses: actions/upload-artifact@v3
+    - name: Save exe file
+      uses: LarchLiu/actions-save-files@v1
       with:
-        name: File Manager.exe
-        path: dist/FileManager/FileManager.exe
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: publish
+        publish_dir: dist
       continue-on-error: true
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
-        name: File Manager_2.exe
+        name: File Manager.exe
         path: dist/FileManager.exe
       continue-on-error: true
       if: ${{ always() }}
