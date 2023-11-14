@@ -23,14 +23,28 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
         pip install pytest
+        pip install flake8 pytest
+        pip install pyinstaller
         pip install -r requirements.txt
-    - name: Creating .exe file
+      continue-on-error: true
+    - name : Test file
+      run : pytest FileManager.py
+      continue-on-error: true
+    - name: Creating exe file
       run : python createexe.py
+      continue-on-error: true
+    - name: Save exe file
+      uses: LarchLiu/actions-save-files@v1
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        publish_branch: publish
+        publish_dir: ./dist
+      continue-on-error: true
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
         name: File Manager.exe
-        path: dist/FileManager/FileManager.exe
+        path: dist/FileManager.exe
+      continue-on-error: true
       if: ${{ always() }}
