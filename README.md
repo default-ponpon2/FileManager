@@ -43,7 +43,7 @@ Ru
 
 Чтобы сразу их установить вы можете написать в терминал:
 
-    pip install > requirements.txt
+    pip install -r requirements.txt
 
 После нужно запустить файл `main.py`
 
@@ -78,9 +78,10 @@ the program transmits data through these files, they will be deleted when the pr
 The file creation window could be done via **`QInputDialog`**, but I was satisfied
 with the option with my own window
 
-### Installation
+### Installation (for advanced users)
 
 For normal use, you can download only the file `FileManager.exe `
+you can find it in the releases.
 
 If you need to plagiarize my code, then - you will find all the files in the `src` folder
 
@@ -88,6 +89,6 @@ All necessary libraries are written in `requirements.txt `
 
 To install them immediately, you can write to the terminal:
 
-    pip install > requirements.txt
+ pip install -r requirements.txt
 
 Then you need to run the file `main.py `
