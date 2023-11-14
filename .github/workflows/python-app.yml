@@ -31,6 +31,6 @@ jobs:
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
-        name: File Manager exe file
+        name: File Manager.exe
         path: dist/all.exe
       if: ${{ always() }}
