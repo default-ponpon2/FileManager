@@ -32,6 +32,22 @@ Ru
 Окно создания файла можно было сделать через **`QInputDialog`**, но меня устроил
 вариант со своим окном
 
+### Установка
+
+Для обычного использования можно скачать только файл `FileManager.exe`
+
+Если вам нужно сплагиатить мой код, то - все файлы вы найдете в папке `src`
+
+Все необходимые библиотеки написаны в `requirements.txt`
+
+Чтобы сразу их установить вы можете написать в терминал:
+
+'''
+pip install > requirements.txt
+'''
+
+После нужно запустить файл `main.py`
+
 
 En
 ### About creating
@@ -62,3 +78,19 @@ the program transmits data through these files, they will be deleted when the pr
 
 The file creation window could be done via **`QInputDialog`**, but I was satisfied
 with the option with my own window
+
+### Installation
+
+For normal use, you can download only the file `FileManager.exe `
+
+If you need to plagiarize my code, then - you will find all the files in the `src` folder
+
+All necessary libraries are written in `requirements.txt `
+
+To install them immediately, you can write to the terminal:
+
+'''
+pip install > requirements.txt
+'''
+
+Then you need to run the file `main.py `
