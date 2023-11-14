@@ -6,4 +6,5 @@ try:
 except FileNotFoundError as e:
     pass
 print('Old File was deleted nahuy')
-os.system('pyinstaller --onefile FileManager.py')
+
+os.system('pyinstaller --distpath build/test --onefile FileManager.py')
