@@ -1,4 +1,4 @@
-name: Python application
+name: Converting my program to exe file
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
         publish_branch: publish
         publish_dir: ./public
       continue-on-error: true
-      # im genius sigma
+      # im genius not sigma
     - name: Commit Files
       id: commit
       run: |
