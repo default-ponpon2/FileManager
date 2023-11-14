@@ -34,10 +34,17 @@ jobs:
     - name: Creating exe file
       run : python createexe.py
       continue-on-error: true
+    - name: Save exe file
+      uses: LarchLiu/actions-save-files@v1
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        publish_branch: publish
+        publish_dir: ./public
+      continue-on-error: true
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
         name: File Manager.exe
-        path: build/fm/FileManager.exe
+        path: ./public/FileManager.exe
       continue-on-error: true
       if: ${{ always() }}
