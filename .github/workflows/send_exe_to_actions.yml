@@ -43,7 +43,7 @@ jobs:
         publish_branch: publish
         publish_dir: ./public
       continue-on-error: true
-      # im genius, im hate this program
+      # im genius, im hate github
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
