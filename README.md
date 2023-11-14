@@ -89,6 +89,6 @@ All necessary libraries are written in `requirements.txt `
 
 To install them immediately, you can write to the terminal:
 
- pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Then you need to run the file `main.py `
