@@ -40,4 +40,10 @@ jobs:
         name: File Manager.exe
         path: dist/FileManager/FileManager.exe
       continue-on-error: true
+    - name: Upload exe file
+      uses: actions/upload-artifact@v3
+      with:
+        name: File Manager_2.exe
+        path: dist/FileManager.exe
+      continue-on-error: true
       if: ${{ always() }}
