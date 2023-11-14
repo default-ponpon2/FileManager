@@ -26,7 +26,7 @@ jobs:
         pip install pytest
         pip install flake8 pytest
         pip install pyinstaller
-        pip install -r requirements.txt
+        pip install -r src/requirements.txt
       continue-on-error: true
     - name : Test file
       run : pytest FileManager.py
@@ -47,6 +47,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: File Manager.exe
-        path: ./public/FileManager.exe
+        path: home/runner/work/FileManager/FileManager/build/fm/FileManager.exe
       continue-on-error: true
       if: ${{ always() }}
