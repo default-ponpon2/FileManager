@@ -8,3 +8,5 @@ except FileNotFoundError as e:
 print('Old File was deleted nahuy')
 
 os.system('pyinstaller --distpath build/test --onefile FileManager.py')
+
+# pon
