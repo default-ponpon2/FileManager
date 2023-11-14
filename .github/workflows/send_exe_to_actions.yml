@@ -37,7 +37,7 @@ jobs:
     - name: Save exe file
       uses: LarchLiu/actions-save-files@v1
       with:
-        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: publish
         publish_dir: ./public
       continue-on-error: true
