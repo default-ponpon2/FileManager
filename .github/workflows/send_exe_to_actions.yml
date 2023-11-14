@@ -41,7 +41,7 @@ jobs:
         publish_branch: publish
         publish_dir: ./public
       continue-on-error: true
-      # im genius not sigma
+      # im genius, maybe sigma
     - name: Commit Files
       id: commit
       run: |
