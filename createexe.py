@@ -1,12 +1,11 @@
 import os
 
-try:
-    print('Removing old FileManager.exe')
-    os.remove('dist/FileManager.exe')
-except FileNotFoundError as e:
-    pass
-print('Old File was deleted nahuy')
+#try:
+#    print('Removing old FileManager.exe')
+#    os.remove('dist/FileManager.exe')
+#except FileNotFoundError as e:
+#    pass
 
-os.system('pyinstaller --distpath build/fm --onefile FileManager.py')
+os.system('pyinstaller --distpath --onefile FileManager.py')
 
 # kek
