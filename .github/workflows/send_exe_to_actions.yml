@@ -41,8 +41,8 @@ jobs:
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
-        name: File Manager.exe
-        path: home/runner/work/FileManager/FileManager/build/fm/FileManager.exe
+        name: FileManager.exe
+        path: home/runner/work/FileManager/FileManager/build/fm/
     - name: Upload exe file from another path
       uses: actions/upload-artifact@v3
       with:
