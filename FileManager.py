@@ -11,7 +11,6 @@ from PyQt5.QtWidgets import QMainWindow, QAction, QMenu
 from pynput.keyboard import Key, Controller
 from PIL import Image
 
-
 d = ["Текстовый Редактор", "Сжатие Изображений"]
 
 TITLE = 'Файловый менеджер'
@@ -114,16 +113,21 @@ class Ui_MainWindow_Text(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding,
+                                           QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum,
+            QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setMinimumSize(QtCore.QSize(640, 480))
         self.centralwidget.setObjectName("centralwidget")
@@ -132,7 +136,8 @@ class Ui_MainWindow_Text(object):
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum,
+                                           QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.tab.sizePolicy().hasHeightForWidth())
@@ -141,25 +146,31 @@ class Ui_MainWindow_Text(object):
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.tab)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 791, 531))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(
+            self.horizontalLayoutWidget)
         self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.textEdit = QtWidgets.QTextEdit(self.horizontalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding,
-                                           QtWidgets.QSizePolicy.MinimumExpanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.
+                                           QSizePolicy.MinimumExpanding,
+                                           QtWidgets.
+                                           QSizePolicy.MinimumExpanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.textEdit.sizePolicy().hasHeightForWidth())
         self.textEdit.setSizePolicy(sizePolicy)
         self.textEdit.setObjectName("textEdit")
         self.horizontalLayout.addWidget(self.textEdit)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed,
+                                           QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.tab_2.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.tab_2.sizePolicy().hasHeightForWidth())
         self.tab_2.setSizePolicy(sizePolicy)
         self.tab_2.setMinimumSize(QtCore.QSize(640, 480))
         self.tab_2.setObjectName("tab_2")
@@ -180,10 +191,10 @@ class Ui_MainWindow_Text(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow",
-                                                                               "New_file.txt"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow",
-                                                                                 "New_file2.txt"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab),
+                                  _translate("MainWindow", "New_file.txt"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2),
+                                  _translate("MainWindow", "New_file2.txt"))
 
 
 class FileManager(QMainWindow, Ui_MainWindow_Text):
@@ -208,13 +219,16 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
         self.timer = QtCore.QTime()
         self.readme = False
 
-        # self.centralwidget.setStyleSheet("background-color: #3c3f41;") смена темы
+# self.centralwidget.setStyleSheet("background-color: #3c3f41;") смена темы
 
         self.console = QtWidgets.QTextBrowser(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.console.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.console.sizePolicy().hasHeightForWidth())
         self.console.setSizePolicy(sizePolicy)
         self.console.setObjectName("console")
         self.horizontalLayout_2.addWidget(self.console)
@@ -336,9 +350,14 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
             self.readme = False
             fname = 'README.md'
         else:
-            fname = QFileDialog.getOpenFileName(self, OPEN_FILE[1:], '.',
-                                                "All Files (*);;Text Files (*.txt);;Python Files (*.py);;"
-                                                "UI Files (*.ui);;Markdown Files (*.md)")[0]
+            al = "All Files (*)"
+            txt = "Text Files (*.txt)"
+            pp = "Python Files (*.py)"
+            ui = "UI Files (*.ui)"
+            md = "Markdown Files (*.md)"
+            fname = QFileDialog.getOpenFileName(self, SAVE_FILE[1:], '.',
+                                                f"{al};;{txt};;{pp};;"
+                                                f"{ui};;{md}")[0]
 
         if not fname:
             return
@@ -347,7 +366,9 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
                 txt = str(f.read().encode(self.encode, errors='replace'))
             else:
                 txt = f.read()
-            idx = self.tabWidget.addTab(QTextEdit(), str(fname.split('/')[-1]) + '|' + self.encode)
+            idx = self.tabWidget.addTab(QTextEdit(),
+                                        str(fname.split('/')[-1]) +
+                                        '|' + self.encode)
             self.tabWidget.widget(idx).setPlainText(txt)
             self.tabWidget.setCurrentIndex(idx)
             self.file_list.append(fname)
@@ -355,9 +376,14 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
 
     def save(self):
         if self.file_list:
+            al = "All Files (*)"
+            txt = "Text Files (*.txt)"
+            pp = "Python Files (*.py)"
+            ui = "UI Files (*.ui)"
+            md = "Markdown Files (*.md)"
             fname = QFileDialog.getSaveFileName(self, SAVE_FILE[1:], '.',
-                                                "All Files (*);;Text Files (*.txt);;Python Files (*.py);;"
-                                                "UI Files (*.ui);;Markdown Files (*.md)")[0]
+                                                f"{al};;{txt};;{pp};;"
+                                                f"{ui};;{md}")[0]
             if not fname:
                 return
             txt = self.tabWidget.currentWidget().toPlainText()
@@ -416,10 +442,12 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
                 warn.setText(e)
                 ex = warn.exec_()
         else:
-            QMessageBox().information(self, 'no_files', 'У вас нет открытых файлов.')
+            QMessageBox().information(self, 'no_files',
+                                      'У вас нет открытых файлов.')
 
     def runas(self):
-        fname = QFileDialog.getOpenFileName(self, RUNAS, '.', "Python Files (*.py)")[0]
+        fname = QFileDialog.getOpenFileName(self, RUNAS, '.',
+                                            "Python Files (*.py)")[0]
         if not fname:
             return
         self.console.show()
@@ -474,7 +502,8 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
             self.tabWidget.removeTab(idx)
             del wgt
         else:
-            QMessageBox().information(self, 'no_files', 'У вас нет открытых файлов.')
+            QMessageBox().information(self, 'no_files',
+                                      'У вас нет открытых файлов.')
 
     def close_all(self):
         if self.file_list:
@@ -482,13 +511,15 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
                 self.tabWidget.removeTab(0)
             self.file_list.clear()
         else:
-            QMessageBox().information(self, 'no_files', 'У вас нет открытых файлов.')
+            QMessageBox().information(self, 'no_files',
+                                      'У вас нет открытых файлов.')
 
     def del_all(self):
         self.tabWidget.widget(self.tabWidget.currentIndex()).setPlainText('')
 
     def whatstime(self):
-        pyperclip.copy(datetime.datetime.now().today().strftime('%H:%M %d-%m-%Y'))
+        pyperclip.copy(datetime.datetime.now().today().strftime(
+            '%H:%M %d-%m-%Y'))
         with keyb.pressed(Key.ctrl):
             keyb.press('v')
             keyb.release('v')
@@ -496,7 +527,10 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
     def change_encoding(self):
         if self.file_list:
             qm = QMessageBox()
-            ret = qm.question(self, '', "Хотите поменять кодировку на всех активных файлах?", qm.Yes | qm.No)
+            ret = qm.question(self, '',
+                              "Хотите поменять кодировку "
+                              "на всех активных файлах?",
+                              qm.Yes | qm.No)
             if ret == qm.Yes:
                 for file in self.file_list:
                     self.filename = file
@@ -534,7 +568,9 @@ class FileManager(QMainWindow, Ui_MainWindow_Text):
         if self.file_list:
             qm = QMessageBox()
             ret = qm.question(self, '', "Вы точно хотите закрыть программу?\n"
-                                        "Возможно у вас остались не сохраненные файлы.", qm.Yes | qm.No)
+                                        "Возможно у вас остались "
+                                        "не сохраненные файлы.",
+                              qm.Yes | qm.No)
             if ret == qm.Yes:
                 try:
                     os.remove('temp.py')
@@ -563,10 +599,12 @@ class Ui_MainWindow_Image(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1280, 720)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed,
+                                           QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(1280, 720))
         MainWindow.setMaximumSize(QtCore.QSize(1280, 720))
@@ -644,8 +682,11 @@ class ImageCompress(QMainWindow, Ui_MainWindow_Image):
         self.closeButton.clicked.connect(self.close_pixmap)
 
     def open(self):
-        self.image_name = QFileDialog.getOpenFileName(self, 'Открыть изображение', '.',
-                                                      'PNG Pictures (*.png);;JPG, JPEG Pictures (*.jpg, *.jpeg)')[0]
+        open_im = 'Открыть изображение'
+        png = 'PNG Pictures (*.png)'
+        jpg = 'JPG, JPEG Pictures (*.jpg, *.jpeg)'
+        self.image_name = QFileDialog.getOpenFileName(self, open_im, '.',
+                                                      f'{png};;{jpg}')[0]
         self.pixmap = QPixmap(self.image_name)
         w = self.pixmap.width()
         h = self.pixmap.height()
@@ -663,16 +704,20 @@ class ImageCompress(QMainWindow, Ui_MainWindow_Image):
         if self.pixlabel == self.pixmap:
             self.pixlabel.clear()
         else:
-            QMessageBox().information(self, 'no_picture', 'У вас нет открытых изображений.')
+            QMessageBox().information(self, 'no_picture',
+                                      'У вас нет открытых изображений.')
 
     def compress(self):
         im = Image.open(self.image_name)
         comp_im = im.resize((int(self.w1 * (int(self.linEdit.value()) / 100)),
-                            int(self.h1 * (int(self.linEdit.value()) / 100))))
+                             int(self.h1 * (int(self.linEdit.value()) / 100))))
 
-        self.error.setText(f'Изображение сжато до {comp_im.width} x {comp_im.height}')
+        self.error.setText(f'Изображение сжато до {comp_im.width} x '
+                           f'{comp_im.height}')
         fname = QFileDialog.getSaveFileName(self, 'Сохранить изображение', '.',
-                                                      'PNG Pictures (*.png);;JPG, JPEG Pictures (*.jpg, *.jpeg)')[0]
+                                            'PNG Pictures (*.png);;'
+                                            'JPG, JPEG Pictures '
+                                            '(*.jpg, *.jpeg)')[0]
         if not fname:
             return
         else:
@@ -739,7 +784,8 @@ class NewFile(QMainWindow, Ui_MainWindow_New):
         self.setWindowTitle('Create New File')
 
     def create_file(self):
-        newfile = open(f'{self.filename.text()}{self.comboBox.currentText()}', 'w+')
+        newfile = open(f'{self.filename.text()}{self.comboBox.currentText()}',
+                       'w+')
         if self.comboBox.currentText() == '.py':
             newfile.write('# New File Created.')
         else:
@@ -761,8 +807,9 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Menu()
     ex.show()
-    print('DeprecationWarning связаны с новой версией Python, на версиях 3.8-3.11 все рабочее!!')
-    print('Функция запуска файлов не работает в .ехе! Я незнаю с чем это связано.')
+    print('DeprecationWarning связаны с новой версией Python, '
+          'на версиях 3.8-3.11 все рабочее!!')
+    print('Функция запуска файлов не работает в .ехе! '
+          'Я незнаю с чем это связано.')
     sys.excepthook = except_hook
     sys.exit(app.exec())
-
