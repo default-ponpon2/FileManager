@@ -6,6 +6,6 @@ import os
 #except FileNotFoundError as e:
 #    pass
 
-os.system('pyinstaller --distpath --onefile FileManager.py')
+os.system('pyinstaller --onefile FileManager.py')
 
 # kek
