@@ -37,11 +37,11 @@ jobs:
           script-name: FileManager.py
           onefile: true
           standalone: true
-          enable-plugin: pyqt5
-          include-qt-plugins: all
+          enable-plugins: pyqt5
           include-module: pyperclip
           windows-icon-from-ico: src/icon.ico
           if: ${{ matrix.os }} == "macos-latest"
+          macos-create-app-bundle: true
           macos-target-arch: universal
           macos-app-mode: gui
       
