@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: ${{ github.event.pull_request.head.repo.full_name }} 
+        repository: ma3rd-nepon/FileManager
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -37,7 +37,7 @@ jobs:
     - name: Creating exe file
       run : python createexe.py
       continue-on-error: true
-      # maybe im stupid
+      # IDK MY PATH OF EXE FILE
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
