@@ -36,6 +36,7 @@ jobs:
       continue-on-error: true
     - name: Creating exe file
       run : python createexe.py
+      working-directory: build/fm
       continue-on-error: true
       # IDK MY PATH OF EXE FILE
     - name: Upload exe file
