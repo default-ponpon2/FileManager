@@ -1,0 +1,38 @@
+name: Converting my program to exe file
+# Special thanks:
+#  Elinsrc for help with actions
+#  hype for new ideas for build app
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: ma3rd-nepon/FileManager
+        ref: ${{ github.event.pull_request.head.ref }}
+        
+    - name: Build python script into a stand-alone binary (ubuntu)
+      uses: Nuitka/Nuitka-Action@main
+      with:
+        nuitka-version: main
+        script-name: FileManager.py
+        onefile: true
+        output-file: filem.bin
+
+    - name: Make binary executable
+      run: chmod +x ./src/build/filem.bin
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.os }} build (Nuitka)
+        path: filem.bin
