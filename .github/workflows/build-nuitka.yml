@@ -29,10 +29,10 @@ jobs:
         output-file: filem.bin
 
     - name: Make binary executable
-      run: chmod +x filem.bin
+      run: chmod +x build/filem.bin
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.os }} build (Nuitka)
-        path: filem.bin
+        path: build/filem.bin
