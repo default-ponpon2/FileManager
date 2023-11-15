@@ -1,0 +1,58 @@
+name: Converting my program to exe file
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+       
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: ma3rd-nepon/FileManager
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+          python-version: '3.10'
+          cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+          pip install -r src/requirements.txt
+      continue-on-error: true
+
+    - name: Build Exe
+      uses: Nuitka/Nuitka-Action@main
+      with:
+          nuitka-version: main
+          script-name: FileManager.py
+          onefile: true
+          standalone: true
+          enable-plugins: pyqt5
+          include-module: pyperclip
+          windows-icon-from-ico: src/icon.ico
+          macos-create-app-bundle: true
+          macos-target-arch: universal
+          macos-app-mode: gui
+          disable-cache: true
+      
+      continue-on-error: true
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.os }} Build
+        path: |
+          build/*.exe
+          build/*.bin
+          build/*.app/**/*
+      continue-on-error: true
