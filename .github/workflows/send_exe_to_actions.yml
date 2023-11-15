@@ -37,15 +37,6 @@ jobs:
     - name: Creating exe file
       run : python createexe.py
       continue-on-error: true
-    - name: Save exe file
-      uses: EndBug/add-and-commit@v9
-      with:
-        commit_message: Changed type of export
-        add: 'FileManager.exe'
-        cwd: ./public
-        commit: --signoff
-        push: true
-      continue-on-error: true
       # maybe im stupid
     - name: Upload exe file
       uses: actions/upload-artifact@v3
