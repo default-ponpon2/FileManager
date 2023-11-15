@@ -36,14 +36,14 @@ jobs:
       continue-on-error: true
     - name: Creating exe file
       run : python createexe.py
-      working-directory: build/fm
+      working-directory: FileManager 
       continue-on-error: true
       # IDK MY PATH OF EXE FILE
     - name: Upload exe file
       uses: actions/upload-artifact@v3
       with:
         name: FileManager.exe
-        path: home/runner/work/FileManager/FileManager/build/fm/
+        path: FileManager/FileManager.exe
     - name: Upload exe file from another path
       uses: actions/upload-artifact@v3
       with:
