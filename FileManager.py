@@ -752,6 +752,7 @@ class NewFile(QMainWindow, Ui_MainWindow_New):
             temp.write(self.filename.text() + self.comboBox.currentText())
         newfile.close()
 
+
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
@@ -760,5 +761,8 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Menu()
     ex.show()
+    print('DeprecationWarning связаны с новой версией Python, на версиях 3.8-3.11 все рабочее!!')
+    print('Функция запуска файлов не работает в .ехе! Я незнаю с чем это связано')
     sys.excepthook = except_hook
     sys.exit(app.exec())
+
