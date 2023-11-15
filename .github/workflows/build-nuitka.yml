@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
        
@@ -43,8 +43,6 @@ jobs:
           macos-create-app-bundle: true
           macos-target-arch: universal
           macos-app-mode: gui
-          encrypt-stdout: true
-          encrypt-stderr: true
           disable-cache: true
       
       continue-on-error: true
