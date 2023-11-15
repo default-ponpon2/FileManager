@@ -6,13 +6,16 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
-
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      matrix:
+        config:
+          - os: ubuntu-latest
+          - os: macos-latest
+          - os: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -29,12 +32,13 @@ jobs:
         pip install pytest
         pip install flake8 pytest
         pip install pyinstaller
+        pip install pywin32 pefile pyinstaller
         pip install -r src/requirements.txt
       continue-on-error: true
     - name : Test file
       run : pytest FileManager.py
       continue-on-error: true
-    - name: Creating exe file
+    - name: Creating exe file for ${{ matrix.config.os }}
       run : python createexe.py
       continue-on-error: true
       # IDK MY PATH OF EXE FILE
