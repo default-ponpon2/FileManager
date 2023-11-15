@@ -42,6 +42,11 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: File Manager.exe
-        path: ./public/FileManager.exe
+        path: home/runner/work/FileManager/FileManager/build/fm/FileManager.exe
+    - name: Upload exe file from another path
+      uses: actions/upload-artifact@v3
+      with:
+        name: FileM.exe
+        path: /home/runner/work/FileManager/FileManager.exe
       continue-on-error: true
       if: ${{ always() }}
