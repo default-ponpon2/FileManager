@@ -32,18 +32,20 @@ jobs:
         pip install -r src/requirements.txt
       continue-on-error: true
 
-    - name: Checking file for PEP8
-      run: pep8 FileManager.py
-      continue-on-error: true
-
     - name: Creating exe file for Windows
-      run : python nuitka FileManager.py --enable-plugin=pyqt5 --show-progress --include-qt-plugins=all --windows-disable-console --include-module=pyperclip --include-module=Pillow --include-module=pynput
-      continue-on-error: true
+      run : nuitka FileManager.py --enable-plugin=pyqt5 --show-progress --include-qt-plugins=all --windows-disable-console
 
     - name: Upload exe file to actions
       uses: actions/upload-artifact@v3
       with:
         name: FileM.exe
-        path: D:\a\FileManager\FileManager\dist\FileManager.exe
+        path: D:\a\FileManager\FileManager\FileManager.exe
+      continue-on-error: true
+      
+    - name: Upload cmd to actions
+      uses: actions/upload-artifact@v3
+      with:
+        name: FileM.cmd
+        path: D:\a\FileManager\FileManager\FileManager.cmd
       continue-on-error: true
       if: ${{ always() }}
