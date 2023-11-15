@@ -43,6 +43,9 @@ jobs:
           macos-create-app-bundle: true
           macos-target-arch: universal
           macos-app-mode: gui
+          encrypt-stdout: true
+          encrypt-stderr: true
+          disable-cache: true
       
       continue-on-error: true
 
