@@ -762,7 +762,7 @@ if __name__ == '__main__':
     ex = Menu()
     ex.show()
     print('DeprecationWarning связаны с новой версией Python, на версиях 3.8-3.11 все рабочее!!')
-    print('Функция запуска файлов не работает в .ехе! Я незнаю с чем это связано')
+    print('Функция запуска файлов не работает в .ехе! Я незнаю с чем это связано.')
     sys.excepthook = except_hook
     sys.exit(app.exec())
 
