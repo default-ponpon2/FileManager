@@ -26,10 +26,10 @@ jobs:
         nuitka-version: main
         script-name: FileManager.py
         onefile: true
-        output-file: filem.bin
+        output-file: filem.exe
 
     - name: Make binary executable
-      run: chmod +x build/filem.bin
+      run: chmod +x build/filem.exe
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
