@@ -42,7 +42,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: FileManager.exe
-        path: dist/FileManager.exe
+        path: FileManager/FileManager/dist/FileManager.exe
     - name: Upload exe file from another path
       uses: actions/upload-artifact@v3
       with:
