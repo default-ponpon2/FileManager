@@ -46,6 +46,10 @@ jobs:
           disable-cache: true
       
       continue-on-error: true
+    - name: fck file if it for linux
+      if: ${{ martix.os }} == "ubuntu-latest"
+        chmod +x FileManager.bin
+      continue-on-error: true
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
